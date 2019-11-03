@@ -1,0 +1,10 @@
+[target.thumbv6m-none-eabi]
+# If 'gdb-multiarch' doesn't work, try 'gdb' or 'arm-none-eabi-gdb'
+runner = 'gdb-multiarch -q -x microbit.gdb'
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+  "-C", "linker=arm-none-eabi-ld",
+]
+
+[build]
+target = "thumbv6m-none-eabi"
